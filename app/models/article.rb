@@ -3,6 +3,8 @@ class Article < ActiveRecord::Base
     def self.parse_from_aktuality(html)
       doc = Nokogiri::HTML.parse(html)
 
+      #TODO: upravit parsovanie podla HTML tagov
+
       doc.search('.item-top .col-text').map do |div|
         anchor = div.search('h2 a').first
         Article.create!(
