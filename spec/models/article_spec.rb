@@ -10,10 +10,8 @@ RSpec.describe Article, :type => :model do
 
     article = Article.first
 
-    #puts article.title
-
     expect(article.title).to eq('Brazílsky obranca Dodo posilnil Inter Miláno')
-    #expect(article.perex).to eq('')
+    expect(article.perex).to eq('Futbalisti AS Trenčín zdolali v poslednom prípravnom stretnutí pred štartom najvyššej slovenskej súťaže Slaviu Praha 1:0.')
     expect(article.id_article).to eq(170733)
   end
 end
