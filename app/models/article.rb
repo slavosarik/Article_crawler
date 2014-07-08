@@ -5,12 +5,12 @@ class Article < ActiveRecord::Base
 
       #TODO: upravit parsovanie podla HTML tagov
 
-      doc.search('.article-box article-box-big article-box-section-1 .col-text').map do |div|
-        anchor = div.search('h2 a').first
+      doc.search('.article-box article-box-big article-box-section-1 .article-info-bottom').map do |div|
+        anchor = div.search('a').first
         Article.create!(
             id_article: anchor[:href][/\/(\d+)\//, 1].to_i,
-            title: anchor.text,
-            perex: div.search('p').text
+            title: anchor.search('span').first.text,
+            perex: div.search('article-introtext').text
         )
       end
     end
