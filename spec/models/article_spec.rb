@@ -9,8 +9,11 @@ RSpec.describe Article, :type => :model do
     expect(Article.count).not_to eq(0)
 
     article = Article.first
-    expect(article.title).to eq('Fico ustúpil opozícii, vývoz vody chce stopnúť v Ústave')
-    #expect(article.perex).to eq('Opozícia dostala ponuku hlasovať za ďalšiu zmenu Ústavy.')
-    #expect(article.sme_id).to eq(7273950)
+
+    #puts article.title
+
+    expect(article.title).to eq('Brazílsky obranca Dodo posilnil Inter Miláno')
+    #expect(article.perex).to eq('')
+    expect(article.id_article).to eq(170733)
   end
 end
