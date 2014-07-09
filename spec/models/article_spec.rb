@@ -21,4 +21,19 @@ RSpec.describe Article, :type => :model do
     puts "koniec"
 
   end
+
+  it 'parses source' do
+
+    #Article.find_each do |article|
+    #  # html = Fara... .get article.url
+    #  article.extract_source(html)
+    #end
+
+    html = # fixture
+    article = Article.new(id_article: 123, title: 'aaa', perex: 'bbb')
+    article.parse_source(html)
+
+    expect(article.source).to eq('SITA')
+    expect(article).to be_persisted
+  end
 end
