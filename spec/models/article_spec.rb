@@ -5,7 +5,7 @@ RSpec.describe Article, :type => :model do
     html = File.read(File.dirname(__FILE__) + '/fixtures/futbal.html', encoding: 'UTF-8')
 
     #html = Faraday.get 'http://sportky.topky.sk/s/13/futbal'
-    #Article.parse_from_sportky(html.html)
+    #Article.parse_from_sportky(html.body)
 
 
     Article.parse_from_sportky(html)
