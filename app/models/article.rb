@@ -1,5 +1,9 @@
 class Article < ActiveRecord::Base
 
+    def url
+      "http://sportky.topky.sk/c/#{id_article}/"
+    end
+
     def self.parse_from_sportky(html)
       doc = Nokogiri::HTML.parse(html)
 
